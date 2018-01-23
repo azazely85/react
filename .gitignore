@@ -2,3 +2,6 @@
 .idea
 node_modules
 public/bundle.js
+build/
+img/
+package-lock.json

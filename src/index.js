@@ -1,1 +1,1 @@
-console.log('kuli');
+let lilu = 'name';
