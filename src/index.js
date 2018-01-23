@@ -1,21 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
-    btnOnClick(event) {
-        console.log(true, event.target);
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            text: ''
+        };
+    }
+    inputOnChange(event) {
+        console.log(event);
+        const text = event.target.value;
+        this.setState({text});
     }
     render() {
         return (
-            <div style={{backgroundColor: 'red'}}>
-                <h1>App ready to work </h1>
-                <h3>it is real react </h3>
-                <button onClick={this.btnOnClick}>{ this.props.children }</button>
+            <div className="test">
+                <h1>Hello world</h1>
+                <input type="text" value={ this.state.text } onChange={ this.inputOnChange.bind(this) }/>
             </div>
         );
     }
 }
+App.propTypes = {
+    bntText: PropTypes.string.isRequired
+};
+App.defaultProps = {
+    bntText: 'Click'
+};
 ReactDOM.render(
-    <App>Hello world</App>,
+    <App/>,
     document.getElementById('app')
 );
