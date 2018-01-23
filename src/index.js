@@ -9,19 +9,29 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            timer: 0
+            timer: 0,
+            array: [
+                {
+                    id: 1,
+                    text: 'Anton'
+                },
+                {
+                    id: 12,
+                    text: 'Denis'
+                }
+            ]
         };
     }
-    componentWillMount() {
-        setInterval(() =>{
-            this.setState({timer: this.state.timer + 1});
-        }, 100);
-    }
+    // componentWillMount() {
+    //     setInterval(() =>{
+    //         this.setState({timer: this.state.timer + 1});
+    //     }, 100);
+    // }
     render() {
         return (
             <div className="test">
                 <h1>Hello world</h1>
-                {this.state.timer < 50 ? <NewComponent/> : null}
+                {this.state.timer < 50 ? <NewComponent array={this.state.array}/> : null}
                 <p>{ this.state.timer }</p>
             </div>
         );

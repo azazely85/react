@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class newComponent extends React.Component {
     constructor(props) {
@@ -14,13 +15,20 @@ export default class newComponent extends React.Component {
     componentWillUnmount() {
         console.log('componentWillUnmount');
     }
-    render() {
-        console.log('render');
+    renderItem(item, idx) {
         return (
-            <div style={{backgroundColor: 'red'}}>
-                <h3>New Component</h3>
-            </div>
+            <li key={idx}><b>Name: {item.text}</b> </li>
+        );
+    }
+    render() {
+        return (
+            <ul>
+                { this.props.array.map(this.renderItem.bind(this)) }
+            </ul>
         );
     }
 }
 
+newComponent.propTypes = {
+    array: PropTypes.array.isRequired
+};
