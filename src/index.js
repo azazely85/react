@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import NewComponent from './new.js';
 
 class App extends React.Component {
 
@@ -8,19 +9,20 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ''
+            timer: 0
         };
     }
-    inputOnChange(event) {
-        console.log(event);
-        const text = event.target.value;
-        this.setState({text});
+    componentWillMount() {
+        setInterval(() =>{
+            this.setState({timer: this.state.timer + 1});
+        }, 100);
     }
     render() {
         return (
             <div className="test">
                 <h1>Hello world</h1>
-                <input type="text" value={ this.state.text } onChange={ this.inputOnChange.bind(this) }/>
+                {this.state.timer < 50 ? <NewComponent/> : null}
+                <p>{ this.state.timer }</p>
             </div>
         );
     }
