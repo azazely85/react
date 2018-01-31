@@ -1,18 +1,9 @@
 import React from 'react';
-import configureStore from './store';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter, Switch} from 'react-router-dom';
-import routes from './routes';
+import ReactDom from 'react-dom';
 
+const App = () => {
+    return <h1>Hi all</h1>;
+};
 
-const  store = configureStore(routes);
-ReactDOM.render((
-    <Provider store = { store }>
-        <BrowserRouter>
-            <Switch>
-                { routes }
-            </Switch>
-        </BrowserRouter>
-    </Provider>
-), document.querySelector('#app'));
+ReactDom.render(<App />, document.getElementById('root'));
+// registerServiceWorker();

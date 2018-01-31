@@ -1,7 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
-.idea
+build
 node_modules
-public/bundle.js
-build/
-img/
-package-lock.json
+.idea
+npm-debug.log
