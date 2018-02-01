@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+header {
+    background: cyan;
+    text-align: center;
+}
+.logo {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+header input {
+    font-size: 20px;
+    margin: 20px 0;
+}
