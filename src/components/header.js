@@ -5,11 +5,16 @@ import React, { Component } from 'react';
 import '../css/styles.css';
 
 class Header extends Component {
+    inputChangHandler(event) {
+        console.log(event.target.value);
+        console.log('change');
+    }
+
     render() {
         return (
             <header>
                 <div className='logo'>Logo</div>
-                <input type='text'/>
+                <input type='text' onChange={ (e) => this.inputChangHandler(e) }/>
             </header>
         );
     }
